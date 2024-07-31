@@ -1,0 +1,154 @@
+.header {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 24px;
+  color: #fff;
+}
+
+.header__container {
+  display: flex;
+  max-width: 1392px;
+  backdrop-filter: blur(60px);
+  background-color: rgba(108, 185, 171, 0.7);
+  padding: 12px 46px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logoLink {
+  font-size: 0;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.header__menuItem {
+  transition: color 0.2s ease-in-out;
+}
+
+.header__menuItem:hover {
+  color: #f0f0f0;
+}
+
+.header__cartWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__cartLink {
+  width: 28px;
+  height: 28px;
+  color: #64099b;
+  font-size: 12px;
+  background-image: url('/img/cart.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 10px 4px 3px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.header__cartLink:hover {
+  transform: translateY(-3px);
+}
+
+.header__menuBurger {
+  position: relative;
+  z-index: 20;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: none;
+  display: none;
+  margin: 7px 0;
+}
+
+.header__menuBurger:focus {
+  outline-width: 0;
+}
+
+.barBot, .barTop,
+.barMid {
+  background: #d9d9d9;
+  display: block;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  border-radius: 8px;
+  height: 1px;
+  width: 20px;
+  margin-bottom: 4px;
+}
+
+.barBot {
+  margin-bottom: 0;
+}
+
+.barTop__opened {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 15% 15%;
+  transform-origin: 15% 15%;
+}
+.barMid__opened {
+  opacity: 0;
+}
+.barBot__opened {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 15% 95%;
+  transform-origin: 15% 95%;
+}
+
+@media (max-width: 1240px) {
+  .header {
+    padding: 0 20px;
+    top: 20px;
+  }
+
+  .header__container {
+    padding: 12px 22px;
+  }
+}
+
+@media (max-width: 940px) {
+  .header__logoLink {
+    width: 78px;
+  }
+
+  .header__menu {
+    font-size: 16px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 660px) {
+  .header {
+    top: 0;
+    padding: 0;
+  }
+  .header__menu {
+    top: 0;
+    right: 0;
+    padding: 70px 0;
+    gap: 16px;
+    width: 100%;
+    z-index: 10;
+    position: absolute;
+    background-color: #6cb9ab;
+    flex-direction: column;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .header__menuBurger {
+    display: block;
+  }
+}
