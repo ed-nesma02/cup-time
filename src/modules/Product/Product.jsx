@@ -6,7 +6,7 @@ export const Product = ({img, price, title}) => {
       <img src={img} alt={title} className="product__img" />
       <div className={s.product__content}>
         <h3 className={s.product__title}>{title}</h3>
-        <p className={s.product__price}>{`${price}\u00A0₽`}</p>
+        <p className={s.product__price}>{price}&nbsp;₽</p>
       </div>
     </article>
   );

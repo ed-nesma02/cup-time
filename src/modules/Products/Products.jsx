@@ -2,7 +2,7 @@ import {Container} from '../Container/Container';
 import {Product} from '../Product/Product';
 import s from './Products.module.css';
 
-const products = [
+export const products = [
   {
     id: 1,
     title: 'Кокосовая матча',

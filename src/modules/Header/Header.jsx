@@ -2,6 +2,7 @@ import {useRef} from 'react';
 import {Container} from '../Container/Container';
 import s from './Header.module.css';
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const menu = useRef(null);
@@ -9,9 +10,9 @@ export const Header = () => {
   return (
     <header className={s.header}>
       <Container className={s.header__container}>
-        <a href="#" className={s.header__logoLink}>
+        <Link to={'/'} className={s.header__logoLink}>
           <img src="/img/logo.svg" alt="Логотип Cup Time" />
-        </a>
+        </Link>
 
         <nav className={s.header__nav}>
           <ul ref={menu} className={s.header__menu}>
@@ -43,9 +44,9 @@ export const Header = () => {
           </ul>
         </nav>
         <div className={s.header__cartWrapper}>
-          <a href="cart.html" className={s.header__cartLink}>
+          <Link to={'/cart'} className={s.header__cartLink}>
             6
-          </a>
+          </Link>
           <button
             onClick={() => {
               setMenuIsOpened(!menuIsOpened);

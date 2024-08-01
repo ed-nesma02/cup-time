@@ -1,0 +1,130 @@
+.order {
+  padding: 50px 0 100px;
+}
+
+.order__title {
+  font-size: 54px;
+  line-height: 1.1;
+  color: #64099b;
+  margin-bottom: 32px;
+}
+
+.order__form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-size: 16px;
+  max-width: 640px;
+}
+
+.orderForm__fieldset_text {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.orderForm__input {
+  border-radius: 4px;
+  padding: 17px 16px;
+  background-color: #f2f9f7;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.orderForm__input::placeholder {
+  color: #b8b8b8;
+}
+
+.orderForm__input_address {
+  grid-column: 1 / -1;
+}
+
+.orderForm__fieldset_delivery {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 120px;
+}
+
+.orderForm__legend {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.orderForm__label {
+  position: relative;
+  display: block;
+  padding-left: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.orderForm__radio {
+  position: absolute;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-left: -20px;
+  cursor: pointer;
+}
+
+.orderForm__radio::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-image: url('/img/uncheck.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+
+.orderForm__radio::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('/img/check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+}
+.orderForm__radio:checked::after {
+  opacity: 1;
+}
+.orderForm__radio:checked::before {
+  opacity: 0;
+}
+
+@media (max-width: 940px) {
+  .order {
+    padding: 30px 0 80px;
+  }
+  .order__title {
+    font-size: 36px;
+  }
+  .orderForm__fieldset_text {
+    gap: 16px;
+  }
+  .order__form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 660px) {
+  .order {
+    padding: 30px 0 60px;
+  }
+  .orderForm__fieldset_text {
+    gap: 8px;
+    grid-template-columns: 1fr;
+  }
+}
