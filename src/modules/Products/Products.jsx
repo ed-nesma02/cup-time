@@ -3,6 +3,7 @@ import {Container} from '../Container/Container';
 import {Product} from '../Product/Product';
 import s from './Products.module.css';
 import {useProducts} from '../../context/ProductContext';
+import {useParams} from 'react-router-dom';
 
 export const products = [
   {
@@ -43,9 +44,17 @@ export const products = [
   },
 ];
 
+const categories = {
+  tea: 'Чай',
+  coffee: 'Кофе',
+  teapots: 'Чайники',
+  cezves: 'Турки',
+  other: 'Прочее',
+};
+
 export const Products = () => {
   const {products, setCategory} = useProducts();
-  const category = 'tea';
+  const {category} = useParams();
 
   useEffect(() => {
     setCategory(category);
@@ -54,7 +63,7 @@ export const Products = () => {
   return (
     <section className={s.products}>
       <Container>
-        <h2 className={s.products__title}>Чай</h2>
+        <h2 className={s.products__title}>{categories[category]}</h2>
 
         <ul className={s.products__list}>
           {products.map((item) => (
