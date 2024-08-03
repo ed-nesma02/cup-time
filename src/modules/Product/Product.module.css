@@ -1,3 +1,7 @@
+.product__link{
+  height: 100%;
+}
+
 .product {
   font-size: 0;
   border-radius: 6px;

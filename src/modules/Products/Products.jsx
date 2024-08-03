@@ -1,6 +1,8 @@
+import {useEffect} from 'react';
 import {Container} from '../Container/Container';
 import {Product} from '../Product/Product';
 import s from './Products.module.css';
+import {useProducts} from '../../context/ProductContext';
 
 export const products = [
   {
@@ -42,6 +44,13 @@ export const products = [
 ];
 
 export const Products = () => {
+  const {products, setCategory} = useProducts();
+  const category = 'tea';
+
+  useEffect(() => {
+    setCategory(category);
+  }, [category, setCategory]);
+
   return (
     <section className={s.products}>
       <Container>

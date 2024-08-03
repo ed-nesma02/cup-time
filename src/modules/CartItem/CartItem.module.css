@@ -47,7 +47,7 @@
 }
 
 .counter__btn_minus {
-  background-image: url('img/minus.svg');
+  background-image: url('/img/minus.svg');
 }
 
 .counter__btn_plus {

@@ -10,7 +10,7 @@ export const Footer = () => {
       <Container className={s.footer__container}>
         <a href="/" className={s.footer__logoLink}>
           <img
-            src="img/logo.svg"
+            src="/img/logo.svg"
             alt="Логотип Cup Time"
             className={s.footer__logo}
           />

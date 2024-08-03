@@ -2,7 +2,7 @@ import {useRef} from 'react';
 import {Container} from '../Container/Container';
 import s from './Header.module.css';
 import {useState} from 'react';
-import { Link } from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 export const Header = () => {
   const menu = useRef(null);
@@ -17,29 +17,64 @@ export const Header = () => {
         <nav className={s.header__nav}>
           <ul ref={menu} className={s.header__menu}>
             <li className={s.header__menuItem}>
-              <a href="#" className={s.header__menuLink}>
+              <NavLink
+                to={`/products/tea`}
+                className={({isActive}) =>
+                  [
+                    isActive ? s.header__menuLink_active : s.header__menuLink,
+                  ].join(' ')
+                }
+              >
                 Чай
-              </a>
+              </NavLink>
             </li>
             <li className={s.header__menuItem}>
-              <a href="#" className={s.header__menuLink}>
+              <NavLink
+                to={`/products/coffee`}
+                className={({isActive}) =>
+                  [
+                    isActive ? s.header__menuLink_active : s.header__menuLink,
+                  ].join(' ')
+                }
+              >
                 Кофе
-              </a>
+              </NavLink>
             </li>
             <li className={s.header__menuItem}>
-              <a href="#" className={s.header__menuLink}>
+              <NavLink
+                to={`/products/teapots`}
+                className={({isActive}) =>
+                  [
+                    isActive ? s.header__menuLink_active : s.header__menuLink,
+                  ].join(' ')
+                }
+              >
                 Чайники
-              </a>
+              </NavLink>
             </li>
             <li className={s.header__menuItem}>
-              <a href="#" className={s.header__menuLink}>
+              <NavLink
+                to={`/products/cezves`}
+                className={({isActive}) =>
+                  [
+                    isActive ? s.header__menuLink_active : s.header__menuLink,
+                  ].join(' ')
+                }
+              >
                 Турки
-              </a>
+              </NavLink>
             </li>
             <li className={s.header__menuItem}>
-              <a href="#" className={s.header__menuLink}>
+              <NavLink
+                to={`/products/other`}
+                className={({isActive}) =>
+                  [
+                    isActive ? s.header__menuLink_active : s.header__menuLink,
+                  ].join(' ')
+                }
+              >
                 Прочее
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>

@@ -1,0 +1,163 @@
+.modal {
+  position: absolute;
+  background-color: #f2f9f7;
+  overflow: hidden;
+  width: 744px;
+  display: flex;
+  padding: 0;
+  border-radius: 6px;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.modal__content {
+  width: 100%;
+  padding: 40px 24px;
+}
+
+.modal__img {
+  max-width: 336px;
+  object-fit: cover;
+}
+
+.modal__title {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.modal__price {
+  font-size: 20px;
+  margin-bottom: 52px;
+}
+
+.modal__list {
+  display: flex;
+  margin-bottom: 52px;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal__item {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__item span {
+  color: #b8b8b8;
+}
+
+.modal__controller {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__addBtn {
+  border: 1px solid #64099b;
+  border-radius: 4px;
+  padding: 15px 24px;
+  font-size: 20px;
+  color: #64099b;
+  background-color: transparent;
+  outline: none;
+}
+
+.counter {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 20px;
+}
+
+.counter__btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  border: 1px solid #b8b8b8;
+  background-color: transparent;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.counter__btn_minus {
+  background-image: url('/img/minus.svg');
+}
+
+.counter__btn_plus {
+  background-image: url('/img/plus.svg');
+}
+
+.counter__quantity {
+  width: 30px;
+  font-size: 20px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.modalClose {
+  position: absolute;
+  border: none;
+  top: 24px;
+  right: 24px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media (max-width: 940px) {
+  .modal{
+    width: 524px;
+  }
+  .modal__img {
+    max-width: 224px;
+  }
+  .modal__content {
+    padding: 24px 24px;
+  }
+  .modal__title {
+    font-size: 20px;
+  }
+  .modal__price {
+    font-size: 16px;
+    margin-bottom: 31px;
+  }
+  .modal__list {
+    margin-bottom: 31px;
+  }
+  .modal__item {
+    font-size: 12px;
+  }
+  .counter__quantity {
+    font-size: 16px;
+  }
+  .counter__btn {
+    width: 24px;
+    height: 24px;
+  }
+  .modal__addBtn {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 660px) {
+  .modal{
+    flex-direction: column;
+    width: 290px;
+  }
+  .modal__img{
+    max-width: 100%;
+  }
+  .modalClose {
+    top: 16px;
+    right: 16px;
+  }
+}

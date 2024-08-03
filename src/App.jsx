@@ -1,4 +1,4 @@
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import {createBrowserRouter, Navigate, RouterProvider} from 'react-router-dom';
 import {Footer} from './modules/Footer/Footer';
 import {Header} from './modules/Header/Header';
 import {Main} from './modules/Main/Main';
@@ -10,6 +10,10 @@ import {Order} from './modules/Order/Order';
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <Navigate to={'/products/tea'} />,
+  },
+  {
+    path: '/products/:category?',
     element: (
       <>
         <Header />
@@ -27,8 +31,21 @@ const router = createBrowserRouter([
           </>
         ),
       },
+    ],
+  },
+  ,
+  {
+    path: '/cart',
+    element: (
+      <>
+        <Header />
+        <Main />
+        <Footer />
+      </>
+    ),
+    children: [
       {
-        path: 'cart',
+        path: '',
         element: (
           <>
             <Cart />
