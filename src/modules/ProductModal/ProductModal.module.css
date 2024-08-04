@@ -67,6 +67,16 @@
   cursor: pointer;
 }
 
+.modal__addBtn:hover {
+  color: #7308b5;
+  border: 1px solid #7308b5;
+}
+
+.modal__addBtn:active {
+  border: 1px solid #6cb9ab;
+  color: #6cb9ab;
+}
+
 .counter {
   display: flex;
   gap: 4px;
@@ -83,6 +93,10 @@
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.counter__btn:active {
+  box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
 }
 
 .counter__btn_minus {
@@ -113,8 +127,21 @@
   cursor: pointer;
 }
 
+.modalClose svg rect {
+  fill: #B8B8B8;
+  transition: all .2s ease-in-out;
+}
+
+.modalClose:hover svg rect {
+  fill: #989898;
+}
+
+.modalClose:active svg rect {
+  fill: #727272;
+}
+
 @media (max-width: 940px) {
-  .modal{
+  .modal {
     width: 524px;
   }
   .modal__img {
@@ -150,11 +177,11 @@
 }
 
 @media (max-width: 660px) {
-  .modal{
+  .modal {
     flex-direction: column;
     width: 290px;
   }
-  .modal__img{
+  .modal__img {
     max-width: 100%;
   }
   .modalClose {

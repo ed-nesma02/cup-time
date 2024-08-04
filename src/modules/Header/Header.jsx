@@ -1,14 +1,21 @@
-import {useRef} from 'react';
+import {useEffect, useRef} from 'react';
 import {Container} from '../Container/Container';
 import s from './Header.module.css';
 import {useState} from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {Link, NavLink, useParams} from 'react-router-dom';
 import {useCart} from '../../context/CartContext';
 
 export const Header = () => {
   const menu = useRef(null);
   const {cart} = useCart();
   const [menuIsOpened, setMenuIsOpened] = useState(false);
+  const {category} = useParams();
+
+  useEffect(() => {
+    setMenuIsOpened(false);
+    menu.current.style.transform = '';
+  }, [category]);
+
   return (
     <header className={s.header}>
       <Container className={s.header__container}>

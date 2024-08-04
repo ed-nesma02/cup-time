@@ -44,14 +44,14 @@ export const CartItem = (data) => {
             type="number"
             className={s.counter__number}
             onChange={(e) => {
-              if (e.target.value < 0) {
+              if (+e.target.value < 0) {
                 updateCart(data.id, 0);
-              } else if(e.target.value >  99) {
+              } else if(+e.target.value >  99) {
                 setItemQuantity(99);
                 updateCart(data.id, 99);
               } else {
-                setItemQuantity(e.target.value);
-                updateCart(data.id, e.target.value);
+                setItemQuantity(+e.target.value);
+                updateCart(data.id, +e.target.value);
               }
             }}
             value={itemQuantity}

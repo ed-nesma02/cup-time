@@ -91,7 +91,7 @@ export const ProductModal = ({data, isOpen, onRequestClose}) => {
             width="12"
             height="1.5"
             transform="rotate(-45 3.71228 12.1976)"
-            fill="#B8B8B8"
+            fill="currentColor"
           />
           <rect
             x="12.1976"
@@ -99,7 +99,7 @@ export const ProductModal = ({data, isOpen, onRequestClose}) => {
             width="12"
             height="1.5"
             transform="rotate(-135 12.1976 13.2583)"
-            fill="#B8B8B8"
+            fill="currnetColor"
           />
         </svg>
       </button>

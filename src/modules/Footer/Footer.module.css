@@ -25,6 +25,10 @@
   gap: 50px;
 }
 
+.footer__menuLink_active{
+  color: #64099B;
+}
+
 .footer__email {
   margin-bottom: 16px;
 }
