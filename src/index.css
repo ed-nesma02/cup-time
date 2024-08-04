@@ -5,7 +5,12 @@
   font-weight: 400;
   src: url('../fonts/inter-v13-cyrillic_latin-regular.woff2') format('woff2');
 }
-
+#root{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
 html {
   box-sizing: border-box;
 }

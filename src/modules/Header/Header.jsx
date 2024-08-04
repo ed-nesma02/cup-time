@@ -3,9 +3,11 @@ import {Container} from '../Container/Container';
 import s from './Header.module.css';
 import {useState} from 'react';
 import {Link, NavLink} from 'react-router-dom';
+import {useCart} from '../../context/CartContext';
 
 export const Header = () => {
   const menu = useRef(null);
+  const {cart} = useCart();
   const [menuIsOpened, setMenuIsOpened] = useState(false);
   return (
     <header className={s.header}>
@@ -80,7 +82,7 @@ export const Header = () => {
         </nav>
         <div className={s.header__cartWrapper}>
           <Link to={'/cart'} className={s.header__cartLink}>
-            6
+            {cart?.length}
           </Link>
           <button
             onClick={() => {

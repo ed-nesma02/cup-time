@@ -64,6 +64,7 @@
   color: #64099b;
   background-color: transparent;
   outline: none;
+  cursor: pointer;
 }
 
 .counter {

@@ -1,10 +1,28 @@
 import Modal from 'react-modal';
 import {API_URL} from '../../const';
 import s from './ProductModal.module.css';
+import {useState} from 'react';
+import {useCart} from '../../context/CartContext';
 
 Modal.setAppElement('#root');
 
 export const ProductModal = ({data, isOpen, onRequestClose}) => {
+  const [quantity, setQuantity] = useState(1);
+  const {addToCart} = useCart();
+
+  const handleDecrease = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+  const handleIncrease = () => {
+    setQuantity(quantity + 1);
+  };
+  const handleAddToCart = () => {
+    addToCart(data, quantity);
+    onRequestClose();
+  };
+
   if (!data) {
     return null;
   }
@@ -34,18 +52,29 @@ export const ProductModal = ({data, isOpen, onRequestClose}) => {
         <div className={s.modal__controller}>
           <div className={`${s.modal__counter} ${s.counter}`}>
             <button
+              type="button"
+              onClick={handleDecrease}
               className={`${s.counter__btn} ${s.counter__btn_minus}`}
             ></button>
             <input
               type="number"
-              defaultValue={1}
+              value={quantity}
               className={s.counter__quantity}
+              readOnly
             />
             <button
+              type="button"
+              onClick={handleIncrease}
               className={`${s.counter__btn} ${s.counter__btn_plus}`}
             ></button>
           </div>
-          <button className={s.modal__addBtn}>Добавить</button>
+          <button
+            type="button"
+            onClick={handleAddToCart}
+            className={s.modal__addBtn}
+          >
+            Добавить
+          </button>
         </div>
       </div>
       <button className={s.modalClose} onClick={onRequestClose}>

@@ -49,6 +49,11 @@
   background-color: transparent;
 }
 
+.cart__empty {
+  margin-top: 20px;
+  height: 100%;
+}
+
 @media (max-width: 1240px) {
   .cart {
     padding: 170px 0 50px;
